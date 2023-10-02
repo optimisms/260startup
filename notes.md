@@ -1,5 +1,6 @@
 ### Server info:  
 
+Domain name: haileterry.com
 Public IP: 184.73.208.113  
 SSH command: ssh -i ./JenkinsKeyPair.pem ubuntu@184.73.208.113
 
