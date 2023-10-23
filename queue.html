@@ -26,6 +26,23 @@
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
+    <main>
+     <!-- The "updates" div below is just a placeholder for web sockets -->
+     
+      <div id="updates">
+        Someone just got their shot! You are now #<span id="curr_pos">5</span> in line.
+      </div>
+      <br>
+      <div id="queue_info">
+        You are 
+        <h2>#<span id="curr_pos">5</span></h2>
+        out of <span id="queue_len">30</span>
+      </div>
+      <br>
+      <div id="time">
+        Est. time remaining: <span id="time_remaining">10 min</span>
+      </div>
+    </main>
     <footer>
       <hr />
       <span class="text-reset">Haile Terry</span>
