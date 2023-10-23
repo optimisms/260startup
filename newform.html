@@ -26,6 +26,56 @@
       <!-- Since we don't have the ability to style we use old style HTML to give some visual formatting -->
       <hr />
     </header>
+    <main>
+      <a href="history.html">Cancel</a>
+      <br>
+      <br>
+      <form method="get" action="history.html">
+        <fieldset>
+          <legend>Owner Info</legend>
+          <label for="owner_name">Owner Name</label>
+          <input type="text" id="owner_name" />
+          <br>
+          <label for="address">Address</label>
+          <input type="text" id="address" />
+        </fieldset>
+        <fieldset>
+          <legend>Contact Info</legend>
+          <label for="contact_type">Phone</label>
+          <input type="radio" id="contactradio1" name="contactradio" value="radio1" checked />
+          <label for="contact_type">Email</label>
+          <input type="radio" id="contactradio2" name="contactradio" value="radio2" />
+          <br>
+          <label for="contact_info">Contact</label>
+          <input type="text" id="contact_info" />
+        </fieldset>
+        <fieldset>
+          <legend>Pet #1 Info</legend>
+            <label for="pet_name">Pet Name</label>
+            <input type="text" id="pet_name" />
+          <br>
+            <label for="age">Age</label>
+            <input type="number" id="age" />
+          <br>
+            Gender: 
+            <label for="pet_gender">Male</label>
+            <input type="radio" id="genderradio1" name="genderradio" value="radio1" checked />
+            <label for="pet_gender">Female</label>
+            <input type="radio" id="genderradio2" name="genderradio" value="radio2" />
+          <br>
+            <label for="breed">Breed</label>
+            <input type="number" id="breed" />
+          <br>
+            Vaccines: 
+            <label for="vaccines">Rabies</label>
+            <input type="checkbox" id="check1" name="vaccinecheck" value="check1" />
+            <label for="vaccines">Distemper</label>
+            <input type="checkbox" id="check2" name="vaccinecheck" value="check2" />
+        </fieldset>
+        <button type="button">Add Another Pet</button><br>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
     <footer>
       <hr />
       <span class="text-reset">Haile Terry</span>
