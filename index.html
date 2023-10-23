@@ -29,19 +29,22 @@
 
     <main>
       <h1>Welcome</h1>
-      <p>Login to play</p>
-      <form method="get" action="play.html">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your name here" />
+      <p>Login to view your records</p>
+      <form method="get" action="history.html">
+        <table>
+          <tbody>
+            <tr>
+              <td><label for="name">Name</label></td>
+              <td><input type="text" id="name" placeholder="Your name here" /></td>
+            </tr>
+            <tr>
+              <td><label for="password">Password</label></td>
+              <td><input type="password" id="password" placeholder="Your password here" /></td>
+            </tr>
+          </tbody>
+        </table>
         <button type="submit">Login</button>
       </form>
     </main>
-
-    <footer>
-      <hr />
-      <span class="text-reset">Author Name(s)</span>
-      <br />
-      <a href="https://github.com/webprogramming260/simon-html">GitHub</a>
-    </footer>
   </body>
 </html>
