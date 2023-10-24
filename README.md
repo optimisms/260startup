@@ -8,7 +8,7 @@ My mom is the president of our local SPCA, a non-profit dedicated to animal welf
 
 ### Design
 
-![Mock](IMG_5879.jpg)
+![Mock](img/IMG_5879.jpg)
 
 ### Key features
 
