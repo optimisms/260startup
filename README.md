@@ -38,3 +38,15 @@ I am going to use the required technologies in the following ways.
 - **Login** - Register and login customers. Credentials securely stored in database. Can't submit a new form or view history unless authenticated.
 - **WebSocket** - As the queue moves forward, the information is broadcast to all customers in line.
 - **React** - Application ported to use the React web framework.
+
+## HTML deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- **HTML pages** - Four HTML pages that represent the ability to login, view history, view queue, and submit a new vaccine form.
+- **Links** - The login page and new form page both automatically link to the history page. All pages contain links to all other pages to represent a future hamburger model; I may change this so that the Login does not include links to others and those are only visible once authenticated, but that might be more effort than it's worth.
+- **Text** - The history page uses text to show previous records submitted by the user. The queue page uses text to represent the queue information.
+- **Images** - There is an image of a dog on the login page.
+- **Login** - The "new form" page has lots of input, mostly text boxes but also a set of radio buttons and checkboxes. Also the login page has input.
+- **Database** - The history page represents data pulled from the database of users' previous records.
+- **WebSocket** - The queue page uses websockets to update the queue live as users in the queue are sent into the clinic and removed from the queue.
