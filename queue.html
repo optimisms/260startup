@@ -7,6 +7,7 @@
     <title>Startup HTML</title>
     <link rel="icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="queue.css" />
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -40,20 +41,20 @@
       </nav>
     </header>
     <main class="container-fluid bg-secondary text-center">
-     <!-- The "updates" div below is just a placeholder for web sockets -->
-     
-      <div id="updates">
+      <!-- The "alert alert-info" div below is just a placeholder for web sockets -->
+      <div class="alert alert-info" role="alert">
         Someone just got their shot! You are now #<span id="curr_pos">5</span> in line.
       </div>
-      <br>
-      <div id="queue_info">
-        You are 
-        <h2>#<span id="curr_pos">5</span></h2>
-        out of <span id="queue_len">30</span>
-      </div>
-      <br>
-      <div id="time">
-        Est. time remaining: <span id="time_remaining">10 min</span>
+      <div id="queue">
+        <div id="queue_info">
+          You are 
+          <h2>#<span id="curr_pos">5</span></h2>
+          out of <span id="queue_len">30</span>
+        </div>
+        <br>
+        <div id="time">
+          Est. time remaining: <span id="time_remaining">10 min</span>
+        </div>
       </div>
     </main>
     <footer class="bg-dark text-white-50">

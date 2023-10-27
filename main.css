@@ -23,6 +23,7 @@ menu .nav-item {
 
 main {
   flex: 1 calc(100vh - 110px);
+  padding: 30px;
 }
 
 footer {
