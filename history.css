@@ -1,0 +1,18 @@
+
+h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+
+#history-box {
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(213, 213, 213, 0.75);
+}
+
+ul {
+    margin-bottom: 0 !important;
+}
