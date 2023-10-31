@@ -51,6 +51,7 @@ Functions:
 
 Arrays:
 - Some useful functions for arrays:
+
 | Function | Meaning                                                   | Example                       |
 | -------- | --------------------------------------------------------- | ----------------------------- |
 | push     | Add an item to the end of the array                       | `a.push(4)`                   |
