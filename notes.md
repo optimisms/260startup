@@ -17,3 +17,11 @@ Selectors: . means class, # means id, x[y] means 'any x with attribute y', x:y i
 | Child            | A list of direct children  | `section > p`  | Any p that is a direct child of a section  |
 | General sibling  | A list of siblings         | `p ~ div`      | Any p that has a div sibling               |
 | Adjacent sibling | A list of adjacent sibling | `p + div`      | Any p that has an adjacent div sibling     |
+
+Flex: @media tag helps you specify if flex should be altered based on things like orientation or screen width
+eg:
+@media (orientation: portrait) {
+  main {
+    flex-direction: column;
+  }
+}
