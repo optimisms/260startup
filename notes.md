@@ -20,7 +20,8 @@ Selectors: `.` means class, `#` means id, `x[y]` means 'any x with attribute y',
 
 Flex: `@media` tag helps you specify if flex should be altered based on things like orientation or screen width
 eg:
-```@media (orientation: portrait) {
+```
+@media (orientation: portrait) {
   main {
     flex-direction: column;
   }
@@ -41,7 +42,8 @@ Primitive types:
 
 Functions:
 - Anonymous functions: can be assigned to variables or passed as parameters to functions
-```const add = function (a, b) {
+```
+const add = function (a, b) {
   return a + b;
 };
 ```
