@@ -68,3 +68,7 @@ Arrays:
 | some     | Run a function to test if any items match                 | `a.some(i => 1 < 1)`          |
 
 JSON: use `JSON.parse()` to turn JSON into an object, and `JSON.stringify()` to convert from object to JSON
+
+RegEx: The `string` class has several functions that accept regular expressions. This includes `match`, `replace`, `search`, and `split`. For a quick test to see if there is a match you can use the regular expression object's `test` function.
+
+Rest/Spread: rest syntax lets you enter variable # of parameters in a function (...restVars) which are interpreted as an array; spread is the opposite and turns an iterable array into individual parameters
