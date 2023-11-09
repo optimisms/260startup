@@ -50,3 +50,14 @@ For this deliverable I built out the structure of my application using HTML.
 - **Login** - The "new form" page has lots of input, mostly text boxes but also a set of radio buttons and checkboxes. Also the login page has input.
 - **Database** - The history page represents data pulled from the database of users' previous records.
 - **WebSocket** - The queue page uses websockets to update the queue live as users in the queue are sent into the clinic and removed from the queue.
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- **Header, footer, and main content body**
+- **Navigation elements** - I converted it from a bulleted list with no coloring or formatting to a stylish navigation bar using references from Bootstrap and Simon, though I changed a few things to better suit what I wanted.
+- **Responsive to window resizing** - My app looks great on all window sizes and devices.
+- **Application elements** - The queue page has certain elements highlighted with color and shadow, and an alert at the top representing web socket information. The New Form page has a well-formatted form with multiple input types and buttons. The History page shows a table with shading for contrast. And the homepage/login page contains a login screen with many Bootstrap components.
+- **Application text content** - Fonts are consistent, text is relatively uniform, with the exception of color/size changes to highlight important information such as headings or the relevant numbers on the queue page.
+- **Application images** - The image on the main/login page has padding and a colored background, as well as a box shadow and border radius.
