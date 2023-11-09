@@ -8,6 +8,7 @@
     <link rel="icon" href="../img/favicon.ico" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/newform.css" />
+    <script src="../js/addpet.js"></script>
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -60,50 +61,52 @@
               </div>
             </div>
             <div class="dropdown-divider"></div>
-            <h3>Pet #1 Info</h3>
-            <div class="row mb-3">
-              <div class="col">
-                <label for="pet_name1" class="form-label">Name</label>
-                <input type="text" class="form-control" id="pet_name1" />
+            <div id="pet-1">
+              <h3>Pet #1 Info</h3>
+              <div class="row mb-3">
+                <div class="col">
+                  <label for="pet_name1" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="pet_name1" />
+                </div>
+                <div class="col">
+                  <label for="pet_age1" class="form-label">Age</label>
+                  <input type="number" class="form-control" id="pet_age1" />
+                </div>
+                <div class="col">
+                  <label for="pet_breed1" class="form-label">Breed</label>
+                  <input type="text" class="form-control" id="pet_breed1" />
+                </div>
               </div>
-              <div class="col">
-                <label for="pet_age1" class="form-label">Age</label>
-                <input type="number" class="form-control" id="pet_age1" />
+              <div class="row mb-3">
+                <div class="col">
+                  <label class="form-label">Gender:&ensp;</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender-radio" id="male1" value="male">
+                    <label class="form-check-label" for="male1">Male</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender-radio" id="female1" value="female">
+                    <label class="form-check-label" for="female1">Female</label>
+                  </div>
+                </div>
               </div>
-              <div class="col">
-                <label for="pet_breed1" class="form-label">Breed</label>
-                <input type="text" class="form-control" id="pet_breed1" />
+              <div class="row mb-3">
+                <div class="col">
+                  <label class="form-label">Vaccines:&ensp;</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="rabies-check1" value="rabies">
+                    <label class="form-check-label" for="rabies-check1">Rabies</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="distemper-check1" value="distemper">
+                    <label class="form-check-label" for="distemper-check1">Distemper</label>
+                  </div>
+                </div>
               </div>
+              <div class="dropdown-divider"></div>
             </div>
-            <div class="row mb-3">
-              <div class="col">
-                <label class="form-label">Gender:&ensp;</label>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender-radio" id="male" value="male">
-                  <label class="form-check-label" for="male">Male</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="gender-radio" id="female" value="female">
-                  <label class="form-check-label" for="female">Female</label>
-                </div>
-              </div>
-            </div>
-            <div class="row mb-3">
-              <div class="col">
-                <label class="form-label">Vaccines:&ensp;</label>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="rabies-check" value="option1">
-                  <label class="form-check-label" for="rabies-check">Rabies</label>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="distemper-check" value="option2">
-                  <label class="form-check-label" for="distemper-check">Distemper</label>
-                </div>
-              </div>
-            </div>
-            <div class="dropdown-divider"></div>
             <br>
-            <button type="submit" class="btn btn-primary">+ Add Another Pet</button>
+            <button type="button" class="btn btn-primary" onclick="addPet()">+ Add Another Pet</button>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
         </div>
