@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Startup HTML</title>
     <link rel="icon" href="img/favicon.ico" />
-    <link rel="stylesheet" href="main.css" />
-    <link rel="stylesheet" href="queue.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/history.css" />
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -29,32 +29,49 @@
             <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="history.html">History</a>
+            <a class="nav-link active" href="history.html">History</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="newform.html">New Form</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="queue.html">Queue</a>
+            <a class="nav-link" href="queue.html">Queue</a>
           </li>
         </menu>
       </nav>
     </header>
-    <main class="container-fluid bg-secondary text-center">
-      <!-- The "alert alert-info" div below is just a placeholder for web sockets -->
-      <div class="alert alert-info" role="alert">
-        Someone just got their shot! You are now #<span id="curr_pos">5</span> in line.
+    <main class="container-fluid bg-secondary">
+      <div id="name">
+        <h3>Welcome, <span id="user_name">John Doe</span>!</h3>
       </div>
-      <div id="queue">
-        <div id="queue_info">
-          You are 
-          <h2>#<span id="curr_pos">5</span></h2>
-          out of <span id="queue_len">30</span>
-        </div>
-        <br>
-        <div id="time">
-          Est. time remaining: <span id="time_remaining">10 min</span>
-        </div>
+      <div id="history-box">
+        <h5>History:</h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Vaccine</th>
+              <th>Pet Name(s)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span id="date">2023-05-29</span></td>
+              <td><span id="vaccine">Rabies</span></td>
+              <td><span id="pet_name">Winston</span></td>
+            </tr>
+            <tr>
+              <td><span id="date">2022-12-18</span></td>
+              <td><span id="vaccine">Distemper</span></td>
+              <td><span id="pet_name">Max, Shazam</span></td>
+            </tr>
+            <tr>
+              <td><span id="date">2022-09-03</span></td>
+              <td><span id="vaccine">Distemper</span></td>
+              <td><span id="pet_name">Shazam</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
     <footer class="bg-dark text-white-50">
