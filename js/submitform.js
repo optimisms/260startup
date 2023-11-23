@@ -9,11 +9,15 @@ function submitForm() {
     let counter = 1;
     let lastPetElement = document.getElementById(`pet-${counter}`);
     while (lastPetElement !== null) {
+        vaccines = [];
         let petInfo = {
-            petName: document.querySelector(`#pet_name${counter}`).value,
-            petAge: document.querySelector(`#pet_age${counter}`).value,
-            petBreed: document.querySelector(`#pet_breed${counter}`).value,
-                
+            name: document.querySelector(`#pet_name${counter}`).value,
+            age: document.querySelector(`#pet_age${counter}`).value,
+            breed: document.querySelector(`#pet_breed${counter}`).value,
+            gender: document.querySelector(`input[name="gender-radio${counter}"]:checked`).value,
+            vaccines: Array.from(document.querySelectorAll(`#rabies-check${counter}, #distemper-check${counter}`))
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value),
         }
         localStorage.setItem(`pet${counter}Info`, JSON.stringify(petInfo));
 
@@ -21,15 +25,8 @@ function submitForm() {
         counter++;
     }
 
-    localStorage.setItem("userName", nameEl.value);
     window.location.href = "history.html";
 }
-
-
-
-
-
-
 
 function displayUserName() {
     const userName = localStorage.getItem('userName') ?? 'John Doe';
