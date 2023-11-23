@@ -11,63 +11,33 @@ function saveDataToLocalStorage() {
 
 saveDataToLocalStorage();
 
-
-
-{/* <tr>
-<td><span id="date">2023-05-29</span></td>
-<td><span id="vaccine">Rabies</span></td>
-<td><span id="pet_name">Winston</span></td>
-</tr>
-<tr>
-<td><span id="date">2022-12-18</span></td>
-<td><span id="vaccine">Distemper</span></td>
-<td><span id="pet_name">Max, Shazam</span></td>
-</tr>
-<tr>
-<td><span id="date">2022-09-03</span></td>
-<td><span id="vaccine">Distemper</span></td>
-<td><span id="pet_name">Shazam</span></td>
-</tr>
-
 function loadHistory() {
-    let history = [];
-    const historyText = localStorage.getItem('history');
-}
-
-
-function loadScores() {
-    let scores = [];
-    const scoresText = localStorage.getItem('scores');
-    if (scoresText) {
-      scores = JSON.parse(scoresText);
+    let historyData = [];
+    const historyText = localStorage.getItem('historyData');
+    if (historyText) {
+      historyData = JSON.parse(historyText);
     }
-  
-    const tableBodyEl = document.querySelector('#scores');
-  
-    if (scores.length) {
-      for (const [i, score] of scores.entries()) {
-        const positionTdEl = document.createElement('td');
-        const nameTdEl = document.createElement('td');
-        const scoreTdEl = document.createElement('td');
-        const dateTdEl = document.createElement('td');
-  
-        positionTdEl.textContent = i + 1;
-        nameTdEl.textContent = score.name;
-        scoreTdEl.textContent = score.score;
-        dateTdEl.textContent = score.date;
-  
-        const rowEl = document.createElement('tr');
-        rowEl.appendChild(positionTdEl);
-        rowEl.appendChild(nameTdEl);
-        rowEl.appendChild(scoreTdEl);
-        rowEl.appendChild(dateTdEl);
-  
-        tableBodyEl.appendChild(rowEl);
-      }
+    
+    const tableBodyEl = document.querySelector('#history');
+
+    if (historyData.length) {
+        for (const [i, historyItem] of historyData.entries()) {
+            const dateTdEl = document.createElement('td');
+            const vaccineTdEl = document.createElement('td');
+            const petNameTdEl = document.createElement('td');
+    
+            dateTdEl.textContent = historyItem.date;
+            vaccineTdEl.textContent = historyItem.vaccine;
+            petNameTdEl.textContent = historyItem.petName;
+    
+            const rowEl = document.createElement('tr');
+            rowEl.appendChild(dateTdEl);
+            rowEl.appendChild(vaccineTdEl);
+            rowEl.appendChild(petNameTdEl);
+    
+            tableBodyEl.appendChild(rowEl);
+        }
     } else {
-      tableBodyEl.innerHTML = '<tr><td colSpan=4>Be the first to score</td></tr>';
+        tableBodyEl.innerHTML = '<tr><td colSpan=4>No history found</td></tr>';
     }
-  }
-  
-  loadScores();
-   */}
+}
