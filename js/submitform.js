@@ -21,6 +21,23 @@ function submitForm() {
         }
         localStorage.setItem(`pet${counter}Info`, JSON.stringify(petInfo));
 
+        let existingHistoryData = JSON.parse(localStorage.getItem('historyData')) || [];
+
+        // Get today's date
+        let today = new Date();
+        let todayFormatted = today.toISOString().split('T')[0];
+
+        // Add new pet data to historyData
+        let newPetData = {
+            date: todayFormatted,
+            vaccines: petInfo.vaccines,
+            petName: petInfo.name,
+        };
+
+        existingHistoryData.push(newPetData);
+
+        localStorage.setItem('historyData', JSON.stringify(existingHistoryData));
+
         lastPetElement = document.getElementById(`pet-${counter}`);
         counter++;
     }

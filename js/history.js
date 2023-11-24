@@ -9,7 +9,6 @@ function saveDataToLocalStorage() {
     localStorage.setItem('historyData', JSON.stringify(historyData));
 }
 
-saveDataToLocalStorage();
 
 function loadHistory() {
     let historyData = [];
