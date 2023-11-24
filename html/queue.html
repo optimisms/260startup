@@ -8,6 +8,7 @@
     <link rel="icon" href="../img/favicon.ico" />
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/queue.css" />
+    <script src="../js/queue.js"></script>
 
     <!-- Include bootstrap CSS framework -->
     <link
@@ -42,13 +43,13 @@
     </header>
     <main class="container-fluid bg-secondary text-center">
       <!-- The "alert alert-info" div below is just a placeholder for web sockets -->
-      <div class="alert alert-info" role="alert">
-        Someone just got their shot! You are now #<span id="curr_pos">5</span> in line.
+      <div class="alert alert-info" role="alert" id="alert_container">
+        Someone just got their shot! You are now #<span id="curr_pos_alert">5</span> in line.
       </div>
       <div id="queue">
         <div id="queue_info">
           You are 
-          <h2>#<span id="curr_pos">5</span></h2>
+          <h2>#<span id="curr_pos_info">5</span></h2>
           out of <span id="queue_len">30</span>
         </div>
         <br>
@@ -63,5 +64,6 @@
         <a class="text-reset" href="https://github.com/optimisms/startup" target="_blank">GitHub</a>
       </div>
     </footer>
+    <script>setInterval(simulateWebSocketAlert, Math.floor(Math.random() * (30000 - 5000 + 1)) + 5000);</script>
   </body>
 </html>
