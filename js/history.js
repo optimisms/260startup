@@ -1,14 +1,13 @@
 //Will replace when database is implemented
 function saveDataToLocalStorage() {
     const historyData = [
-        { date: '2023-05-29', vaccine: 'Rabies', petName: 'Winston' },
-        { date: '2022-12-18', vaccine: 'Distemper', petName: 'Max, Shazam' },
-        { date: '2022-09-03', vaccine: 'Distemper', petName: 'Shazam' }
+        { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
+        { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
+        { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
     ];
 
     localStorage.setItem('historyData', JSON.stringify(historyData));
 }
-
 
 function loadHistory() {
     let historyData = [];
@@ -26,7 +25,7 @@ function loadHistory() {
             const petNameTdEl = document.createElement('td');
     
             dateTdEl.textContent = historyItem.date;
-            vaccineTdEl.textContent = historyItem.vaccine;
+            vaccineTdEl.textContent = historyItem.vaccines.join(', ');
             petNameTdEl.textContent = historyItem.petName;
     
             const rowEl = document.createElement('tr');
