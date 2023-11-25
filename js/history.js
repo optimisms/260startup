@@ -6,8 +6,13 @@ function saveDataToLocalStorage() {
         { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
     ];
 
-    localStorage.setItem('historyData', JSON.stringify(historyData));
+    const historyText = localStorage.getItem('historyData');
+    if (!historyText) {
+        localStorage.setItem('historyData', JSON.stringify(historyData));
+    }    
 }
+
+saveDataToLocalStorage();
 
 function loadHistory() {
     let historyData = [];
