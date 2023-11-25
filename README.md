@@ -61,3 +61,12 @@ For this deliverable I properly styled the application into its final appearance
 - **Application elements** - The queue page has certain elements highlighted with color and shadow, and an alert at the top representing web socket information. The New Form page has a well-formatted form with multiple input types and buttons. The History page shows a table with shading for contrast. And the homepage/login page contains a login screen with many Bootstrap components.
 - **Application text content** - Fonts are consistent, text is relatively uniform, with the exception of color/size changes to highlight important information such as headings or the relevant numbers on the queue page.
 - **Application images** - The image on the main/login page has padding and a colored background, as well as a box shadow and border radius.
+
+## JavaScript deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+- **login** - When you press the login button it saves your username and takes you to the history page, displaying your username.
+- **database** - The user's history is displayed on the history page. Currenlty this is stored and retrieved from local storage, but it will be replaced with the database data later.
+- **WebSocket** - I used the setInterval function to periodically generate an alert about moving up in the queue. It also periodocially updates the length of the queue and the estimated wait time. This will be replaced with WebSocket messages later.
+- **application logic** - On the page to submit a new form, clicking "Add Another Pet" creates a new section on the form. Submitting the form updates The highlight and ranking number change based up the user's selections.
