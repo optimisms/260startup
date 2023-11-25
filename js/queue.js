@@ -1,55 +1,56 @@
 let intervalId;
+let currentPos = 10; // Initial position
 
 function updateQueue() {
-  const currPosInfo = document.getElementById('curr_pos_info');
-  const queueLen = document.getElementById('queue_len');
-  const timeRemaining = document.getElementById('time_remaining');
+    const currPosInfo = document.getElementById('curr_pos_info');
+    const queueLen = document.getElementById('queue_len');
+    const timeRemaining = document.getElementById('time_remaining');
 
-  // Update current position
-  const currPos = parseInt(currPosInfo.textContent, 10);
-  currPosInfo.textContent = Math.max(1, currPos - 1);
+    // Update current position
+    currentPos = currentPos - 1;
+    currPosInfo.textContent = currentPos;
 
-  // Update queue length randomly
-  const randomChange = Math.floor(Math.random() * 5) + 1;
-  const newQueueLen = Math.max(1, parseInt(queueLen.textContent, 10) + (Math.random() < 0.5 ? -randomChange : randomChange));
-  queueLen.textContent = newQueueLen;
+    // Update queue length randomly
+    const randomChange = Math.floor(Math.random() * 5) + 1;
+    const newQueueLen = Math.max(1, parseInt(queueLen.textContent, 10) + (Math.random() < 0.5 ? -randomChange : randomChange));
+    queueLen.textContent = newQueueLen;
 
-  // Update time remaining
-  timeRemaining.textContent = Math.max(1, (currPos - 1) * 2) + ' min';
+    // Update time remaining
+    timeRemaining.textContent = (currentPos * 2) + ' min';
 
-  // Check if the position is 1 and stop the interval if true
-  if (currPos === 1) {
-    clearInterval(intervalId);
-  }
+    // Check if the position is 1 and stop the interval if true
+    if (currentPos === 1) {
+        clearInterval(intervalId);
+    }
 }
 
 // Function to simulate WebSocket alerts
 function simulateWebSocketAlert() {
-  const currPosAlert = document.getElementById('curr_pos_alert');
+    // Check if the position is already 1
+    if (currentPos === 1) {
+        clearInterval(intervalId);
+        return; // Skip further execution if the position is already 1
+    }
 
-  // Update current position in alert
-  const currPos = parseInt(currPosAlert.textContent, 10);
-  currPosAlert.textContent = Math.max(1, currPos - 1);
+    // Update queue information
+    updateQueue();
 
-  // Check if the position is already 1
-  if (currPos === 1) {
-    clearInterval(intervalId);
-    return; // Skip further execution if the position is already 1
-  }
+    // Get div containing alerts
+    const alertContainer = document.getElementById('alert_container');
 
-  const alertContainer = document.getElementById('alert_container');
+    // Create a new alert element with updated values
+    const newAlert = document.createElement('div');
+    newAlert.className = 'alert alert-info';
+    newAlert.role = 'alert';
+    newAlert.innerHTML = `Someone just got their shot! You are now #${currentPos} in line.`;
 
-  // Display alert
-  alertContainer.style.display = 'block';
+    // Insert the new alert below the existing alert
+    alertContainer.insertAdjacentElement('beforeend', newAlert);
 
-  // Update queue information
-  updateQueue();
-
-  // Hide alert after 15 seconds
-  setTimeout(() => {
-    alertContainer.style.display = 'none';
-  }, 15000);
+    setTimeout(() => {
+        newAlert.style.display = 'none';
+    }, 5000);
 }
 
 // Set interval and store the interval ID
-intervalId = setInterval(simulateWebSocketAlert, Math.floor(Math.random() * (15000 - 10000 + 1)) + 10000);
+intervalId = setInterval(simulateWebSocketAlert, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
