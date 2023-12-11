@@ -1,4 +1,4 @@
-function submitForm() {
+async function submitForm() {
     let ownerInfo = {
         name: document.getElementById("owner_name").value,
         email: document.getElementById("email").value,
@@ -21,8 +21,6 @@ function submitForm() {
         }
         localStorage.setItem(`pet${counter}Info`, JSON.stringify(petInfo));
 
-        let existingHistoryData = JSON.parse(localStorage.getItem('historyData')) || [];
-
         // Get today's date
         let today = new Date();
         let todayFormatted = today.toISOString().split('T')[0];
@@ -34,15 +32,32 @@ function submitForm() {
             petName: petInfo.name,
         };
 
-        existingHistoryData.push(newPetData);
-
-        localStorage.setItem('historyData', JSON.stringify(existingHistoryData));
+        try {
+            
+            // const response = await fetch('/api/form', {
+            //     method: 'POST',
+            //     headers: { 'content-type': 'application/json' },
+            //     body: JSON.stringify({ ownerInfo, allPetInfo }),
+            // });
+    
+            // const history = await response.json();
+            // localStorage.setItem('historyData', JSON.stringify(history));
+            throw new Error("error");
+        } catch {
+            updateHistoryLocal(newPetData);
+        }
 
         lastPetElement = document.getElementById(`pet-${counter}`);
         counter++;
     }
 
     window.location.href = "history.html";
+}
+
+function updateHistoryLocal(petData) {
+    let existingHistoryData = JSON.parse(localStorage.getItem('historyData')) || [];
+    existingHistoryData.push(petData);
+    localStorage.setItem('historyData', JSON.stringify(existingHistoryData));
 }
 
 function displayUserName() {
