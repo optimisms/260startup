@@ -1,5 +1,3 @@
-let history = [];
-
 const express = require('express');
 const app = express();
 
@@ -26,7 +24,7 @@ app.use(`/api`, apiRouter);
 
 // GetHistory
 apiRouter.get('/history', (req, res) => {
-    res.send(historyData);
+    res.send(history);
 });
 
 // SubmitNewForm
@@ -34,21 +32,20 @@ apiRouter.post('/form', (req, res) => {
     console.log('POST request received at /api/form');
     console.log(req.body);
 
-    // history = updateHistory(req.body, history);
+    history = updateHistory(req.body, history);
     // TODO: Push to DB
-    
-    historyData.push(req.body);
-    res.send(historyData);
+
+    res.send(history);
 });
 
-// updateHistory adds a new form to the history and returns the updated history.
-let historyData = [
+let history = [
         { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
         { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
         { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
-    
 ];
-function updateHistory(newForm) {
+
+// updateHistory adds a new form to the history and returns the updated history.
+function updateHistory(newForm, historyData) {
     historyData.push(newForm);
 
     return historyData;
