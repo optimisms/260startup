@@ -33,17 +33,16 @@ async function submitForm() {
         };
 
         try {
-            
-            // const response = await fetch('/api/form', {
-            //     method: 'POST',
-            //     headers: { 'content-type': 'application/json' },
-            //     body: JSON.stringify({ ownerInfo, allPetInfo }),
-            // });
+            const response = await fetch('/api/form', {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(newPetData),
+            });
     
-            // const history = await response.json();
-            // localStorage.setItem('historyData', JSON.stringify(history));
-            throw new Error("error");
-        } catch {
+            const history = await response.json();
+            localStorage.setItem('historyData', JSON.stringify(history));
+        } catch (error) {
+            console.log('Error message:', error.message);
             updateHistoryLocal(newPetData);
         }
 

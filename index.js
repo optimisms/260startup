@@ -26,20 +26,30 @@ app.use(`/api`, apiRouter);
 
 // GetHistory
 apiRouter.get('/history', (req, res) => {
-    res.send(history);
+    res.send(historyData);
 });
 
 // SubmitNewForm
 apiRouter.post('/form', (req, res) => {
     console.log('POST request received at /api/form');
-    history = updateHistory(req.body, history);
-    //TODO: Push to DB
-    res.send(history);
+    console.log(req.body);
+
+    // history = updateHistory(req.body, history);
+    // TODO: Push to DB
+    
+    historyData.push(req.body);
+    res.send(historyData);
 });
 
 // updateHistory adds a new form to the history and returns the updated history.
-function updateHistory(newForm, history) {
-    history.push(newForm);
+let historyData = [
+        { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
+        { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
+        { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
+    
+];
+function updateHistory(newForm) {
+    historyData.push(newForm);
 
-    return history;
+    return historyData;
 }
