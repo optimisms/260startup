@@ -17,6 +17,8 @@ const collection = db.collection('testCollection');
 
 async function submitNewForm(form) {
     console.log("Entered submitNewForm()");
+    const result = await collection.insertOne(form);
+    return result;
 }
   
 function getHistory() {
