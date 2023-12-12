@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const DB = require('./database.js');
 
 // Set up listening port
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
