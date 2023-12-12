@@ -3,7 +3,8 @@ const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
-const db = client.db('rental');
+const db = client.db('testDB');
+const collection = db.collection('testCollection');
 
 (async function testConnection() {
   await client.connect();
