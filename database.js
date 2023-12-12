@@ -13,3 +13,13 @@ const db = client.db('rental');
   console.log(`Unable to connect to database with ${url} because ${ex.message}`);
   process.exit(1);
 });
+
+async function submitNewForm(form) {
+    console.log("Entered submitNewForm()");
+}
+  
+function getHistory() {
+    console.log("Entered getHistory()");
+}
+  
+  module.exports = { submitNewForm, getHistory };
