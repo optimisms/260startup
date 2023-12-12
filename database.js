@@ -24,6 +24,13 @@ async function submitNewForm(form) {
   
 function getHistory() {
     console.log("Entered getHistory()");
+
+    const query = {};
+    const options = {
+        sort: { date: -1 },
+    };
+    const cursor = collection.find(query, options);
+    return cursor.toArray();
 }
   
-  module.exports = { submitNewForm, getHistory, populateDummyData };
+  module.exports = { submitNewForm, getHistory };
