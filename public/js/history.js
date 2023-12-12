@@ -14,13 +14,27 @@ function saveDataToLocalStorage() {
 
 saveDataToLocalStorage();
 
-function loadHistory() {
+async function loadHistory() {
     let historyData = [];
-    const historyText = localStorage.getItem('historyData');
-    if (historyText) {
-      historyData = JSON.parse(historyText);
-    }
+    try {
+        // Get history from the service
+        const response = await fetch('/api/history');
+        historyData = await response.json();
     
+        // Save the history locally in case we go offline in the future
+        localStorage.setItem('historyData', JSON.stringify(historyData));
+    } catch {
+        // If there was an error then just use the last saved history
+        const historyText = localStorage.getItem('historyData');
+        if (historyText) {
+            historyData = JSON.parse(historyText);
+        }
+    }
+  
+    displayHistory(historyData);
+}
+
+function displayHistory(historyData) {
     const tableBodyEl = document.querySelector('#history');
 
     if (historyData.length) {
