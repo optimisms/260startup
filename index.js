@@ -24,6 +24,7 @@ app.use(`/api`, apiRouter);
 
 // GetHistory
 apiRouter.get('/history', (req, res) => {
+    console.log('GET request received at /api/history');
     res.send(history);
 });
 
