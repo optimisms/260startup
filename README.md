@@ -81,3 +81,10 @@ For this deliverable I added backend endpoints that receive new form submissions
 - **Backend service endpoints** - Endpoints for submitting a new form (`/api/form`) and retrieving history (`/api/history`). 
 - **Frontend calls service endpoints** - Both endpoints are called using the `fetch` function in [submitform.js](public/js/submitform.js) and [history.js](public/js/history.js).
 
+## DB deliverable
+
+For this deliverable I stored the votes in the database.
+
+- **MongoDB Atlas database created** - done!
+- **Endpoints for data** - My API endpoints process the data and send it to MongoDB in [index.js](index.js).
+- **Stores data in MongoDB** - See [database.js](database.js) for the calls to insert and retrieve from the data.
