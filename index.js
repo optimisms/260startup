@@ -26,6 +26,7 @@ app.use(`/api`, apiRouter);
 // GetHistory
 apiRouter.get('/history', async(req, res) => {
     console.log('GET request received at /api/history');
+    DB.populateDummyData();
 
     const history = await DB.getHistory();
     res.send(history);

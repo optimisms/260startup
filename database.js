@@ -15,8 +15,19 @@ const collection = db.collection('testCollection');
   process.exit(1);
 });
 
+async function populateDummyData() {
+    let history = [
+        { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
+        { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
+        { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
+    ];
+    const result = await collection.insertMany(history);
+    return result;
+}
+
 async function submitNewForm(form) {
     console.log("Entered submitNewForm()");
+    
     const result = await collection.insertOne(form);
     return result;
 }
@@ -25,4 +36,4 @@ function getHistory() {
     console.log("Entered getHistory()");
 }
   
-  module.exports = { submitNewForm, getHistory };
+  module.exports = { submitNewForm, getHistory, populateDummyData };
