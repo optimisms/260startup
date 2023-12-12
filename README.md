@@ -73,7 +73,7 @@ For this deliverable I implemented by JavaScript so that the application works f
 
 ## Service deliverable
 
-For this deliverable I added backend endpoints that receive new form submissions and return the user's form history.
+For this deliverable I added backend endpoints that receive new form submissions and return the user's form history. I accidentally messed up the version control at one point ([read here](https://github.com/optimisms/startup/pull/1) for more details) so there are less commits than there should be and than I normally include.
 
 - **Node.js/Express HTTP service** - See [index.js](index.js).
 - **Static middleware for frontend** - See [index.js](index.js) with the use of `app.use(express.static('public'));` and `app.use(express.json());`.
