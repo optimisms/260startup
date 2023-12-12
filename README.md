@@ -70,3 +70,14 @@ For this deliverable I implemented by JavaScript so that the application works f
 - **database** - The user's history is displayed on the history page. Currenlty this is stored and retrieved from local storage, but it will be replaced with the database data later.
 - **WebSocket** - I used the setInterval function to periodically generate an alert about moving up in the queue. It also periodocially updates the length of the queue and the estimated wait time. This will be replaced with WebSocket messages later.
 - **application logic** - On the page to submit a new form, clicking "Add Another Pet" creates a new section on the form. Submitting the form updates The highlight and ranking number change based up the user's selections.
+
+## Service deliverable
+
+For this deliverable I added backend endpoints that receive new form submissions and return the user's form history.
+
+- **Node.js/Express HTTP service** - See [index.js](index.js).
+- **Static middleware for frontend** - See [index.js](index.js) with the use of `app.use(express.static('public'));` and `app.use(express.json());`.
+- **Calls to third party endpoints** - Called in the new file at [thirdparty.js](public/js/thirdparty.js) and displayed on the History page.
+- **Backend service endpoints** - Endpoints for submitting a new form (`/api/form`) and retrieving history (`/api/history`). 
+- **Frontend calls service endpoints** - Both endpoints are called using the `fetch` function in [submitform.js](public/js/submitform.js) and [history.js](public/js/history.js).
+
