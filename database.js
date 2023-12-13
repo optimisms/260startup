@@ -16,6 +16,12 @@ const userCollection = db.collection('users');
   process.exit(1);
 });
 
+async function createUser(email, password) {
+}
+
+function getUser(email) {
+}
+
 async function submitNewForm(form) {
     console.log("Entered submitNewForm()");
     
