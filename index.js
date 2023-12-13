@@ -39,21 +39,5 @@ apiRouter.post('/form', async(req, res) => {
     DB.submitNewForm(req.body);
     const history = await DB.getHistory();
 
-    // history = updateHistory(req.body, history);
-    // TODO: Push to DB
-
     res.send(history);
 });
-
-// let history = [
-//         { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
-//         { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
-//         { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
-// ];
-
-// // updateHistory adds a new form to the history and returns the updated history.
-// function updateHistory(newForm, historyData) {
-//     historyData.push(newForm);
-
-//     return historyData;
-// }
