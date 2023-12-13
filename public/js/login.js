@@ -27,4 +27,8 @@ function setDisplay(controlId, display) {
     if (playControlEl) {
       playControlEl.style.display = display;
     }
-  }
+}
+
+function seeRecords() {
+    window.location.href = "history.html";
+}
