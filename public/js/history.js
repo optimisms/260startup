@@ -58,3 +58,9 @@ function displayHistory(historyData) {
         tableBodyEl.innerHTML = '<tr><td colSpan=4>No history found</td></tr>';
     }
 }
+
+function displayUserName() {
+    const userName = localStorage.getItem('userName') ?? 'John Doe';
+    const userNameElement = document.getElementById('user_name');
+    userNameElement.textContent = userName;
+}
