@@ -10,18 +10,6 @@
     // }
   })();
 
-// function login() {
-//     const nameEl = document.querySelector("#userName");
-//     localStorage.setItem("userName", nameEl.value);
-//     window.location.href = "history.html";
-// }
-
-// function register() {
-//     const nameEl = document.querySelector("#userName");
-//     localStorage.setItem("userName", nameEl.value);
-//     window.location.href = "history.html";
-// }
-
 async function login() {
     loginOrCreate('/api/auth/login');
 }
