@@ -46,21 +46,25 @@
       <h1>Welcome</h1>
       <div id="picture" class="picture-box"><img width="200px" src="../img/dog.jpeg" alt="random" /></div>
       <p>Login to view your records</p>
-      <form method="get" action="history.html">
-        <table>
-          <tbody>
-            <tr>
-              <td><label for="name">Name</label></td>
-              <td><input type="text" id="name" placeholder="Your name here" /></td>
-            </tr>
-            <tr>
-              <td><label for="password">Password</label></td>
-              <td><input type="password" id="password" placeholder="Your password here" /></td>
-            </tr>
-          </tbody>
-        </table>
-        <button class="btn btn-primary" type="submit" onclick="login()">Login</button>
-      </form>
+      <!-- Displayed when needing authentication -->
+      <div id="loginControls" style="display: block">
+        <div class="input-group mb-3">
+          <span class="input-group-text">@</span>
+          <input class="form-control" type="text" id="userName" placeholder="username" />
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text">🔒</span>
+          <input class="form-control" type="password" id="userPassword" placeholder="password" />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="login()">Login</button>
+        <button type="button" class="btn btn-primary" onclick="register()">Create</button>
+      </div>
+      <!-- Displayed when ready to play -->
+      <div id="playControls" style="display: block">
+        <div id="playerName"></div>
+        <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+        <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
+      </div>
     </main>
     <footer class="bg-dark text-white-50">
       <div class="container-fluid">
