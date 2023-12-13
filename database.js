@@ -4,7 +4,8 @@ const config = require('./dbConfig.json');
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
 const client = new MongoClient(url);
 const db = client.db('startup');
-const collection = db.collection('formHistory');
+const formCollection = db.collection('formHistory');
+const userCollection = db.collection('users');
 
 (async function testConnection() {
   await client.connect();
@@ -18,7 +19,7 @@ const collection = db.collection('formHistory');
 async function submitNewForm(form) {
     console.log("Entered submitNewForm()");
     
-    const result = await collection.insertOne(form);
+    const result = await formCollection.insertOne(form);
     return result;
 }
   
@@ -29,7 +30,7 @@ function getHistory() {
     const options = {
         sort: { date: -1 },
     };
-    const cursor = collection.find(query, options);
+    const cursor = formCollection.find(query, options);
 
     return cursor.toArray();
 }
