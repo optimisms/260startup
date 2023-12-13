@@ -23,6 +23,16 @@ app.use(express.json());
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
+// Auth - Register
+app.post('/auth/create', async (req, res) => {
+    res.send({ id: 'user@id.com' });
+});
+
+// Auth - Login
+app.post('/auth/login', async (req, res) => {
+    res.send({ id: 'user@id.com' });
+});
+
 // GetHistory
 apiRouter.get('/history', async(req, res) => {
     console.log('GET request received at /api/history');
