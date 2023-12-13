@@ -61,6 +61,12 @@ apiRouter.post('/auth/login', async (req, res) => {
     res.status(401).send({ msg: 'Unauthorized' });
 });
 
+// Auth - Logout
+apiRouter.delete('/auth/logout', (_req, res) => {
+    res.clearCookie(authCookieName);
+    res.status(204).end();
+  });
+
 // GetHistory
 apiRouter.get('/history', async(req, res) => {
     console.log('GET request received at /api/history');

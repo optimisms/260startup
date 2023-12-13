@@ -1,13 +1,13 @@
 (async () => {
     const userName = localStorage.getItem('userName');
-    // if (userName) {
-    //   document.querySelector('#userNameDisplay').textContent = userName;
-    //   setDisplay('loginControls', 'none');
-    //   setDisplay('playControls', 'block');
-    // } else {
-      setDisplay('loginControls', 'block');
-      setDisplay('playControls', 'none');
-    // }
+    if (userName) {
+        document.querySelector('#userNameDisplay').textContent = userName;
+        setDisplay('loginControls', 'none');
+        setDisplay('playControls', 'block');
+    } else {
+        setDisplay('loginControls', 'block');
+        setDisplay('playControls', 'none');
+    }
   })();
 
 async function login() {
@@ -39,6 +39,13 @@ async function loginOrRegister(endpoint) {
         const msgModal = new bootstrap.Modal(modalEl, {});
         msgModal.show();
     }
+}
+
+function logout() {
+    localStorage.removeItem('userName');
+    fetch(`/api/auth/logout`, {
+        method: 'delete',
+    }).then(() => (window.location.href = '/html/index.html'));
 }
 
 function seeRecords() {
