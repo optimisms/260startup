@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const DB = require('./database.js');
 
+const authCookieName = 'token';
+
 // Set up listening port
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 app.listen(port, () => {
@@ -31,6 +33,9 @@ apiRouter.post('/auth/register', async (req, res) => {
         res.status(409).send({ msg: 'Existing user' });
     } else {
         const user = await DB.createUser(req.body.username, req.body.password);
+
+        // Set the cookie
+        setAuthCookie(res, user.token);
 
         res.send({
             id: user._id,
@@ -62,3 +67,11 @@ apiRouter.post('/form', async(req, res) => {
 
     res.send(history);
 });
+
+function setAuthCookie(res, authToken) {
+    res.cookie(authCookieName, authToken, {
+        secure: true,
+        httpOnly: true,
+        sameSite: 'strict',
+    });
+}

@@ -54,5 +54,5 @@ function getHistory() {
 
     return cursor.toArray();
 }
-  
+
 module.exports = { createUser, getUser, submitNewForm, getHistory };
