@@ -53,13 +53,13 @@ async function loginUser() {
     }
   }
 
+function seeRecords() {
+    window.location.href = "history.html";
+}
+
 function setDisplay(controlId, display) {
     const playControlEl = document.querySelector(`#${controlId}`);
     if (playControlEl) {
       playControlEl.style.display = display;
     }
-}
-
-function seeRecords() {
-    window.location.href = "history.html";
 }
