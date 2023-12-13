@@ -11,14 +11,14 @@
   })();
 
 async function login() {
-    loginOrCreate('/api/auth/login');
+    loginOrRegister('/api/auth/login');
 }
   
 async function register() {
-    loginOrCreate('/api/auth/create');
+    loginOrRegister('/api/auth/register');
 }
   
-async function loginOrCreate(endpoint) {
+async function loginOrRegister(endpoint) {
     const username = document.querySelector('#userName')?.value;
     const password = document.querySelector('#userPassword')?.value;
     const response = await fetch(endpoint, {

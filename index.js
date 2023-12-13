@@ -24,8 +24,8 @@ const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
 // Auth - Register
-apiRouter.post('/auth/create', async (req, res) => {
-    console.log('POST request received at /auth/create');
+apiRouter.post('/auth/register', async (req, res) => {
+    console.log('POST request received at /auth/register');
     res.send({ id: 'user@id.com' });
 });
 
