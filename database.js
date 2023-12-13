@@ -1,4 +1,5 @@
 const { MongoClient } = require('mongodb');
+const uuid = require('uuid');
 const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
@@ -20,6 +21,7 @@ async function createUser(username, password) {
     const user = {
         username: username,
         password: password,
+        token: uuid.v4(),
       };
       await userCollection.insertOne(user);
     
