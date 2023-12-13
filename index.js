@@ -26,7 +26,16 @@ app.use(`/api`, apiRouter);
 // Auth - Register
 apiRouter.post('/auth/register', async (req, res) => {
     console.log('POST request received at /auth/register');
-    res.send({ id: 'user@id.com' });
+
+    if (await DB.getUser(req.body.username)) {
+        res.status(409).send({ msg: 'Existing user' });
+    } else {
+        const user = await DB.createUser(req.body.username, req.body.password);
+
+        res.send({
+            id: user._id,
+        });
+    }
 });
 
 // Auth - Login

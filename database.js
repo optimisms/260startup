@@ -16,10 +16,18 @@ const userCollection = db.collection('users');
   process.exit(1);
 });
 
-async function createUser(email, password) {
+async function createUser(username, password) {
+    const user = {
+        username: username,
+        password: password,
+      };
+      await userCollection.insertOne(user);
+    
+      return user;
 }
 
-function getUser(email) {
+function getUser(username) {
+  return userCollection.findOne({ username: username });
 }
 
 async function submitNewForm(form) {
