@@ -8,7 +8,7 @@ My mom is the president of our local SPCA, a non-profit dedicated to animal welf
 
 ### Design
 
-![Mock](img/IMG_5879.jpg)
+![Mock](public/img/IMG_5879.jpg)
 
 ### Key features
 
@@ -83,7 +83,7 @@ For this deliverable I added backend endpoints that receive new form submissions
 
 ## DB deliverable
 
-For this deliverable I stored the votes in the database.
+For this deliverable I stored form input in the database.
 
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My API endpoints process the data and send it to MongoDB in [index.js](index.js).
