@@ -18,3 +18,8 @@ button {
   background: rgb(155, 123, 94);
   border-radius: 5px;
 }
+
+#playerName {
+  padding: 10px;
+  font-size: 25px;
+}
