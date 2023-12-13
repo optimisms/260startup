@@ -91,7 +91,7 @@ For this deliverable I stored form input in the database.
 
 ## Login deliverable
 
-For this deliverable I enables users to create accounts and login. 
+For this deliverable I enabled users to create accounts and login. 
 
 - **User registration** - Creates a new account in the database.
 - **Existing user login** - Existing users can login; logging in with bad credentials or creating a user with existing username fails.
