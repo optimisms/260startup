@@ -10,12 +10,12 @@ const formCollection = db.collection('formHistory');
 const userCollection = db.collection('users');
 
 (async function testConnection() {
-  await client.connect();
-  await db.command({ ping: 1 });
-  console.log("Connected successfully to DB server");
+    await client.connect();
+    await db.command({ ping: 1 });
+    console.log("Connected successfully to DB server");
 })().catch((ex) => {
-  console.log(`Unable to connect to database with ${url} because ${ex.message}`);
-  process.exit(1);
+    console.log(`Unable to connect to database with ${url} because ${ex.message}`);
+    process.exit(1);
 });
 
 async function createUser(username, password) {
