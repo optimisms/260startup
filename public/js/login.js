@@ -21,3 +21,10 @@ function register() {
     localStorage.setItem("userName", nameEl.value);
     window.location.href = "history.html";
 }
+
+function setDisplay(controlId, display) {
+    const playControlEl = document.querySelector(`#${controlId}`);
+    if (playControlEl) {
+      playControlEl.style.display = display;
+    }
+  }
