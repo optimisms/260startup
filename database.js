@@ -36,6 +36,10 @@ function getUser(username) {
   return userCollection.findOne({ username: username });
 }
 
+function getUserByToken(token) {
+    return userCollection.findOne({ token: token });
+}
+
 async function submitNewForm(form) {
     console.log("Entered submitNewForm()");
     
@@ -55,4 +59,4 @@ function getHistory() {
     return cursor.toArray();
 }
 
-module.exports = { createUser, getUser, submitNewForm, getHistory };
+module.exports = { createUser, getUser, getUserByToken, submitNewForm, getHistory };

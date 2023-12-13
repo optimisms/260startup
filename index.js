@@ -67,8 +67,22 @@ apiRouter.delete('/auth/logout', (_req, res) => {
     res.status(204).end();
   });
 
+// secureApiRouter verifies credentials for endpoints
+var secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
+
+secureApiRouter.use(async (req, res, next) => {
+    authToken = req.cookies[authCookieName];
+    const user = await DB.getUserByToken(authToken);
+    if (user) {
+      next();
+    } else {
+      res.status(401).send({ msg: 'Unauthorized' });
+    }
+  });
+
 // GetHistory
-apiRouter.get('/history', async(req, res) => {
+secureApiRouter.get('/history', async(req, res) => {
     console.log('GET request received at /api/history');
 
     const history = await DB.getHistory();
@@ -76,7 +90,7 @@ apiRouter.get('/history', async(req, res) => {
 });
 
 // SubmitNewForm
-apiRouter.post('/form', async(req, res) => {
+secureApiRouter.post('/form', async(req, res) => {
     console.log('POST request received at /api/form');
     console.log(req.body);
 
