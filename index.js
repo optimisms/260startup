@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
 const DB = require('./database.js');
@@ -46,7 +47,16 @@ apiRouter.post('/auth/register', async (req, res) => {
 // Auth - Login
 apiRouter.post('/auth/login', async (req, res) => {
     console.log('POST request received at /auth/login');
-    res.send({ id: 'user@id.com' });
+
+    const user = await DB.getUser(req.body.username);
+    if (user) {
+        if (await bcrypt.compare(req.body.password, user.password)) {
+            setAuthCookie(res, user.token);
+            res.send({ id: user._id });
+            return;
+        }
+    }
+    res.status(401).send({ msg: 'Unauthorized' });
 });
 
 // GetHistory
