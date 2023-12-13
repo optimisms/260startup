@@ -1,3 +1,4 @@
+const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const express = require('express');
 const app = express();
@@ -21,6 +22,9 @@ app.use(express.static('public'));
 
 // JSON body parsing using built-in middleware
 app.use(express.json());
+
+// Use the cookie parser middleware for tracking authentication tokens
+app.use(cookieParser());
 
 // Router for service endpoints
 const apiRouter = express.Router();
