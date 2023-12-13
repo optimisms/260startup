@@ -38,9 +38,7 @@ apiRouter.post('/auth/register', async (req, res) => {
         // Set the cookie
         setAuthCookie(res, user.token);
 
-        res.send({
-            id: user._id,
-        });
+        res.send({ id: user._id });
     }
 });
 
