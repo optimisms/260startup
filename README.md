@@ -88,3 +88,12 @@ For this deliverable I stored form input in the database.
 - **MongoDB Atlas database created** - done!
 - **Endpoints for data** - My API endpoints process the data and send it to MongoDB in [index.js](index.js).
 - **Stores data in MongoDB** - See [database.js](database.js) for the calls to insert and retrieve from the data.
+
+## Login deliverable
+
+For this deliverable I enables users to create accounts and login. 
+
+- **User registration** - Creates a new account in the database.
+- **Existing user login** - Existing users can login; logging in with bad credentials or creating a user with existing username fails.
+- **Use MongoDB to store credentials** - Stores user login info (username, hashed password, and token).
+- **Restricts functionality** - You cannot view history or submit a new form unless you're logged in.
