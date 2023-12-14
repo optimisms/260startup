@@ -68,7 +68,7 @@ apiRouter.delete('/auth/logout', (_req, res) => {
   });
 
 // secureApiRouter verifies credentials for endpoints
-var secureApiRouter = express.Router();
+const secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
 secureApiRouter.use(async (req, res, next) => {
