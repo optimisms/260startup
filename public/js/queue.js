@@ -68,12 +68,15 @@ function configureWebSocket() {
         let msg = `${getUserName()} connected to queue.`;
         broadcastEvent(msg, socket);
     };
+
+    // Display that we have closed the webSocket
     socket.onclose = (event) => {
         addAlert('Disconnected from queue');
         let msg = `${getUserName()} disconnected from queue.`;
         broadcastEvent(msg, socket);
     };
 
+    // Display message received from another user
     socket.onmessage = async (event) => {
         const text = await event.data.text();
         const chat = JSON.parse(text);
@@ -81,6 +84,7 @@ function configureWebSocket() {
     };
 }
 
+//Send event info to other users
 function broadcastEvent(msg, socket) {
     const event = {
         from: getUserName(),
