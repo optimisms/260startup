@@ -69,6 +69,12 @@ function configureWebSocket() {
     socket.onclose = (event) => {
         addAlert('Disconnected from queue');
     };
+
+    socket.onmessage = async (event) => {
+        const text = await event.data.text();
+        const chat = JSON.parse(text);
+        addAlert(chat.message);
+    };
 }
 
 function broadcastEvent(msg, socket) {
