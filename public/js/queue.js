@@ -35,6 +35,11 @@ function simulateWebSocketAlert() {
     // Update queue information
     updateQueue();
 
+    // Post alert about updated queue
+    addAlert();    
+}
+
+function addAlert() {
     // Get div containing alerts
     const alertContainer = document.getElementById('alert_container');
 
