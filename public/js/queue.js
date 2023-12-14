@@ -65,9 +65,13 @@ function configureWebSocket() {
     // Display that we have opened the webSocket
     socket.onopen = (event) => {
         addAlert('Connected to queue');
+        let msg = `${getUserName()} connected to queue.`;
+        broadcastEvent(msg, socket);
     };
     socket.onclose = (event) => {
         addAlert('Disconnected from queue');
+        let msg = `${getUserName()} disconnected from queue.`;
+        broadcastEvent(msg, socket);
     };
 
     socket.onmessage = async (event) => {
