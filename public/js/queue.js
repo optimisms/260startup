@@ -36,10 +36,10 @@ function simulateWebSocketAlert() {
     updateQueue();
 
     // Post alert about updated queue
-    addAlert();    
+    addAlert(`Someone just got their shot! You are now #${currentPos} in line.`);    
 }
 
-function addAlert() {
+function addAlert(msg) {
     // Get div containing alerts
     const alertContainer = document.getElementById('alert_container');
 
@@ -47,7 +47,7 @@ function addAlert() {
     const newAlert = document.createElement('div');
     newAlert.className = 'alert alert-info';
     newAlert.role = 'alert';
-    newAlert.innerHTML = `Someone just got their shot! You are now #${currentPos} in line.`;
+    newAlert.innerHTML = msg;
 
     // Insert the new alert below the existing alert
     alertContainer.insertAdjacentElement('beforeend', newAlert);
