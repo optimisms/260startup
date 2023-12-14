@@ -25,7 +25,7 @@ function updateQueue() {
 }
 
 // Function to simulate WebSocket alerts
-function simulateWebSocketAlert() {
+function simulateQueueUpdate() {
     // Check if the position is already 1
     if (currentPos === 1) {
         clearInterval(intervalId);
@@ -99,4 +99,4 @@ function getUserName() {
 
 configureWebSocket();
 
-intervalId = setInterval(simulateWebSocketAlert, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
+intervalId = setInterval(simulateQueueUpdate, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
