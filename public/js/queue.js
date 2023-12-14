@@ -71,6 +71,18 @@ function configureWebSocket() {
     };
 }
 
+function broadcastEvent(msg, socket) {
+    const event = {
+        from: getUserName(),
+        message: msg
+    };
+    socket.send(JSON.stringify(event));
+}
+
+function getUserName() {
+    return localStorage.getItem('userName') ?? 'John Doe';
+}
+
 configureWebSocket();
 
 intervalId = setInterval(simulateWebSocketAlert, Math.floor(Math.random() * (20000 - 10000 + 1)) + 10000);
