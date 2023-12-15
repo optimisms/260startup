@@ -1,19 +1,3 @@
-//Will replace when database is implemented
-function saveDataToLocalStorage() {
-    const historyData = [
-        { date: '2023-05-29', vaccines: ['Rabies'], petName: 'Winston' },
-        { date: '2022-12-18', vaccines: ['Distemper'], petName: 'Max, Shazam' },
-        { date: '2022-09-03', vaccines: ['Distemper'], petName: 'Shazam' }
-    ];
-
-    const historyText = localStorage.getItem('historyData');
-    if (!historyText) {
-        localStorage.setItem('historyData', JSON.stringify(historyData));
-    }    
-}
-
-saveDataToLocalStorage();
-
 async function loadHistory() {
     let historyData = [];
     try {
