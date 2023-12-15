@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Button from 'react-bootstrap/Button';
+
 export default function Unauthenticated(props) {
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
@@ -15,9 +17,9 @@ export default function Unauthenticated(props) {
                     <span className="input-group-text">🔒</span>
                     <input className="form-control" type="password" id="userPassword" onChange={(e) => setPassword(e.target.value)} placeholder="password" />
                 </div>
-                {/* <button type="button" className="btn btn-primary" onClick="login()">Login</button> */}
-                {/* <button type="button" className="btn btn-primary" onClick="register()">Create</button> */}
-            
+
+                <Button variant='primary' onClick={() => loginUser()}>Login</Button>
+                <Button variant='secondary' onClick={() => createUser()}>Create</Button>
         </div>
     )
 };
