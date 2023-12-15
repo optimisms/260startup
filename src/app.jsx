@@ -16,22 +16,27 @@ export default function App() {
                         <a className="navbar-brand" href="#">PGSPCA</a>
                         <menu className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="index.html">Home</a>
+                                <NavLink className='nav-link' to=''>Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="history.html">History</a>
+                                <NavLink className='nav-link' to='history'>History</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" href="newform.html">New Form</a>
+                                <NavLink className='nav-link' to='newform'>New Form</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="queue.html">Queue</a>
+                                <NavLink className='nav-link' to='queue'>Queue</NavLink>
                             </li>
                         </menu>
                     </nav>
                 </header>
         
-                <main>App components go here</main>
+                <Routes>
+                    <Route path='/' element={<Login />} exact />
+                    <Route path='/history' element={<History />} />
+                    <Route path='/newform' element={<NewForm />} />
+                    <Route path='/queue' element={<Queue />} />
+                </Routes>
         
                 <footer class="bg-dark text-white-50">
                     <div class="container-fluid">
