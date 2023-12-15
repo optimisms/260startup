@@ -20,7 +20,7 @@ export default function Authenticated(props) {
 
     return (
         <div>
-            <div id="userNameDisplay"></div>
+            <div className="userNameDisplay">{props.userName}</div>
             <Button variant='primary' onClick={() => navigate('/history')}>See Records</Button>
             <Button variant='secondary' onClick={() => logout()}>Logout</Button>
         </div>
