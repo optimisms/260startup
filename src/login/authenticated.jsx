@@ -7,6 +7,19 @@ import "authenticated.css";
 export default function Authenticated() {
     const navigate = useNavigate();
 
+    function logout() {
+        fetch(`/api/auth/logout`, {
+          method: 'delete',
+        })
+          .catch(() => {
+            // Logout failed. Assuming offline
+          })
+          .finally(() => {
+            localStorage.removeItem('userName');
+            props.onLogout();
+          });
+      }
+
     return (
         <div>
             <h1>Authenticated goes here.</h1>
