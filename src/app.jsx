@@ -4,6 +4,7 @@ import { Login } from './login/login';
 import { History } from './history/history';
 import { NewForm } from './newform/newform';
 import { Queue } from './queue/queue';
+import { AuthState } from './login/authState';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 
