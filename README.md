@@ -106,3 +106,12 @@ For this deliverable I used webSocket to let every user know when someone has jo
 - **Frontend makes WebSocket connection** - Done; see [queue.js](public/js/queue.js).
 - **Data sent over WebSocket connection** - Done; see [queue.js](public/js/queue.js).
 - **WebSocket data displayed** - Along with the usual alerts describing how you have moved up in the queue, it now also displays a message whenever another user joins the queue.
+
+## React deliverable
+
+For this deliverable I converted the application over to use React.
+
+- **Bundled and transpiled** - Done!
+- **Components** - History, Login, and its subcomponentes of Authenticated, Unauthenticated, and MessageDialog are all functionaly components. The Queue is also semi-functional, though the styling is slightly off for reasons passing understanding (a recurring theme through the whole React project), as it does count down and display alerts, however inaccurately.
+- **Router** - Routing between all the pages through the nav bar, and particularly from Login to History. 
+- **Hooks** - I have several useState, useEffect, and useNavigate Hooks in the Login and History components (particularly in the App.jsx code that uses Login and the subcomponents of Login (Un/Authenticated)).
