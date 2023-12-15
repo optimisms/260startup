@@ -1,5 +1,7 @@
 import React from 'react';
 
+import "authenticated.css";
+
 export default function Authenticated() {
     return (
         <div>
