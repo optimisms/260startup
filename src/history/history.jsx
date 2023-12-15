@@ -26,7 +26,7 @@ export function History() {
         <tr key={i}>
           <td>{history.date}</td>
           <td>{history.vaccines.join(', ')}</td>
-          <td>{history.pet}</td>
+          <td>{history.petName}</td>
         </tr>
       );
     }
