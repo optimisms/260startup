@@ -36,6 +36,7 @@ export default function App() {
                     <Route path='/history' element={<History />} />
                     <Route path='/newform' element={<NewForm />} />
                     <Route path='/queue' element={<Queue />} />
+                    <Route path='*' element={<NotFound />} />
                 </Routes>
         
                 <footer class="bg-dark text-white-50">
@@ -47,4 +48,8 @@ export default function App() {
             </div>
         </BrowserRouter>
     );
-  }
+}
+
+function NotFound() {
+    return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
+}
