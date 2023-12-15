@@ -11,13 +11,17 @@ export function Login({ userName, authState, onAuthChange }) {
     <main className='container-fluid bg-secondary text-center'>
       <h1>Welcome to the PGSPCA</h1>
       <div id="picture" className="picture-box"><img width="200px" src="../../public/dog.jpeg" alt="random" /></div>
-      <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
-      <Unauthenticated
-            userName={userName}
-            onLogin={(loginUserName) => {
-              onAuthChange(loginUserName, AuthState.Authenticated);
-            }}
-      />
+      {authState === AuthState.Authenticated && (
+        <Authenticated userName={userName} onLogout={() => onAuthChange(userName, AuthState.Unauthenticated)} />
+      )}
+      {authState === AuthState.Unauthenticated && (
+        <Unauthenticated
+          userName={userName}
+          onLogin={(loginUserName) => {
+            onAuthChange(loginUserName, AuthState.Authenticated);
+          }}
+        />
+      )}
     </main>
   );
 }
