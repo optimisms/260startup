@@ -102,9 +102,9 @@ For this deliverable I enabled users to create accounts and login.
 
 For this deliverable I used webSocket to let every user know when someone has joined the queue. I wanted to also make it let everyone know when someone had reached #1 and was removed from the queue, but I couldn't figure out how to trigger an event when currentPos = 1, and since I already met all requirements without it I decided not to debug it.
 
-- **Backend listens for WebSocket connection** - Done; see [index.js](index.js) and [peerProxy.js](peerProxy.js).
-- **Frontend makes WebSocket connection** - Done; see [queue.js](public/js/queue.js).
-- **Data sent over WebSocket connection** - Done; see [queue.js](public/js/queue.js).
+- **Backend listens for WebSocket connection** - Done; see [index.js](https://github.com/optimisms/startup/blob/f4b479ebd24c562cee29f7672134184f6f4622b3/index.js) and [peerProxy.js](https://github.com/optimisms/startup/blob/f4b479ebd24c562cee29f7672134184f6f4622b3/peerProxy.js).
+- **Frontend makes WebSocket connection** - Done; see [queue.js](https://github.com/optimisms/startup/blob/f4b479ebd24c562cee29f7672134184f6f4622b3/public/js/queue.js).
+- **Data sent over WebSocket connection** - Done; see [queue.js](https://github.com/optimisms/startup/blob/f4b479ebd24c562cee29f7672134184f6f4622b3/public/js/queue.js).
 - **WebSocket data displayed** - Along with the usual alerts describing how you have moved up in the queue, it now also displays a message whenever another user joins the queue.
 
 ## React deliverable
